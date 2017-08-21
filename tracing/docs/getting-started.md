@@ -7,15 +7,17 @@ Making Traces
 =============
  * [Trace Event Format](https://docs.google.com/document/d/1CvAClvFfyA5R-PhYUmn5OOQtYMH4h6I0nSsKchNAySU/edit?usp=sharing) if you want to generate traces yourself
  * [py-trace-event](https://github.com/natduca/py_trace_event) for generating traces from python
- * [Chrome's trace_event.h](http://src.chromium.org/chrome/trunk/src/base/debug/trace_event.h) if you're in Chrome's ecosystem
+ * [Chrome's trace_event.h](https://chromium.googlesource.com/chromium/src/base/+/master/trace_event/trace_event.h) if you're in Chrome's ecosystem
  * [ftrace](https://www.kernel.org/doc/Documentation/trace/ftrace.txt) for generating traces on Linux
 
 Note: trace-viewer supports custom trace file formats. Just [[add an importer|Extending-and-Customizing-Trace-Viewer]] to trace viewer for your favorite file format.
 
 Contributing New Stuff
 ======================
- * Join our Google Groups: [trace-viewer](https://groups.google.com/forum/#!forum/trace-viewer), [trace-viewer-bugs](https://groups.google.com/forum/#!forum/trace-viewer-bugs)
+ * Join our Google Groups: [tracing@chromium.org](https://groups.google.com/a/chromium.org/forum/#!forum/tracing)
+ * File a bug: [issue
+   tracker](https://github.com/catapult-project/catapult/issues)
  * Learn how to start: [Contributing](https://github.com/catapult-project/catapult/blob/master/CONTRIBUTING.md)
  * Read the [Trace Viewer style guide](https://docs.google.com/document/d/1MMOfywou2Oaho4jOttUk-ZSJcHVd5G5BTsD48rPrBtQ/edit)
  * Pick a feature from the [tracing wish list](https://docs.google.com/a/chromium.org/document/d/1T1UJHIgImSEPSugCt2TFrkNsraBFITPHpYFGDJStePc/preview).
- * Familiarize yourself with the [[Trace-Viewer's-Internals]] and our [[Trace-Viewer-Components]].
+ * Familiarize yourself with the [Trace-Viewer's-Internals](trace-viewer-internals.md) and our [Trace-Viewer-Components](https://github.com/catapult-project/catapult/wiki/Trace-Viewer-Components).

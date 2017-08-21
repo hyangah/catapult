@@ -1,11 +1,11 @@
 Though there are some concepts hold the same across all trace formats we've encountered, there are an always plenty of domain-specific details to a given expertise area that defy standard treatment.
 
-In trace-viewer, we distinguish between "core" pieces, which are domain-neutral and belong in `trace_viewer/core` and domain-specific pieces, which we are in `trace_viewer/extras`. As such, core/ has a variety of extension points that then extras/ pulls in.
+In trace-viewer, we distinguish between "core" pieces, which are domain-neutral and belong in `tracing/core` and domain-specific pieces, which we are in `tracing/extras`. As such, core/ has a variety of extension points that then extras/ pulls in.
 
 # Importers
 TraceViewer is not tied to one specific trace file format: everyone has their own ideal way for getting performance data, storing it, and eventually getting it into the HTML file for viewing. And, since trace-viewer tries to be able to view traces from multiple systems all together, it may not even be possible to get traces into a single file format. Thats fine, as we see it.
 
-The main unit of extension here is the Importer object, `core/importer/importer.html`. To teach trace viewer about a new file format, subclass that importer, then hook it up to `default_importers.html`. Voila, you have the beginnings
+The main unit of extension here is the Importer object, `tracing/importer/importer.html`. To teach trace viewer about a new file format, subclass that importer, then hook it up to `default_importers.html`. Voila, you have the beginnings
 
 When you call TraceModel.import, you pass array of objects. We then run over this array one at a time, then walk through the registered importers looking for one that `.canHandle` that trace. Once it is found, we assign that trace to the importer.
 
@@ -21,6 +21,6 @@ In Chrome, some of our traces have a complex and massive JSON dump from our grap
 interpreted exactly the right way, let us reconstruct a view of the page just from the trace.
 
 There are two extension points that make this possible:
-- We allow subtypes to be registered for ObjectSnapshots and ObjectInstances. This way you can build up a domain-specific model of the trace instead of having to parse the trace yourself after the fact. See `extras/cc/layer_tree_host_impl.html` for an example.
+- We allow subtypes to be registered for ObjectSnapshots and ObjectInstances. This way you can build up a domain-specific model of the trace instead of having to parse the trace yourself after the fact. See `tracing/extras/chrome/cc/layer_tree_host_impl.html` for an example.
 
-- We allow custom viewer objects to be registered for Snapshots and Instances. When a user clicks on one, we look for a viewer and use that object instead. See `extras/cc/layer_tree_host_impl_view.html` as an example.
+- We allow custom viewer objects to be registered for Snapshots and Instances. When a user clicks on one, we look for a viewer and use that object instead. See `tracing/extras/chrome/cc/layer_tree_host_impl_view.html` as an example.
